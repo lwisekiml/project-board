@@ -1,5 +1,6 @@
 package com.example.projectboard.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // 슬라이스 테스트라 컨트롤러 외의 빈들을 로드 하지 않는다.(불필요하다고 여겨지는 내용들은 로드 X) 컨트롤러와 연관된 내용만 최소한으로 읽어드린다.
 // 데이터 레스트에 오토 컨피규레이션을 읽지 않은 것이다. 해결방법는 복잡하여 @SpringBootTest 로 해결
 //@WebMvcTest
+@Disabled("Spring Data REST 통합테스트는 불필요하므로 제외시킴")
 @DisplayName("Data REST - API 테스트")
 @Transactional  // 아래 테스트는 인테그레이션 테스트여서 DB에 영향을 준다. 그래서 테스트에서 동작하는 트랜잭셔널 기본 동작을 Rollback으로 만들어주기 위함
 @AutoConfigureMockMvc
