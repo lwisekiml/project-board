@@ -51,11 +51,11 @@ public class Article extends AuditingFields {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Article article)) return false;
+        if (!(o instanceof Article that)) return false;
         // 지금 막 만든 아직 영속화되지 않은 엔티티는 모두 동등성 검사 탈락(각각 다른 값으로 보겠다.)
         // id가 부여되지 않았다면 동등성 검사 자체가 의미 없다는 것으로 보고 다 다른 것으로 간주하거나 혹은 처리하지 않겠다.
         // id가 같다면 당연히 두 객체는 같은 객체이다.
-        return id != null && id.equals(article.id);
+        return id != null && id.equals(that.getId());
     }
 
     @Override
