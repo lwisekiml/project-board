@@ -19,6 +19,7 @@ public interface ArticleCommentRepository extends
         QuerydslBinderCustomizer<QArticleComment> {
 
     List<ArticleComment> findByArticle_Id(Long articleId); // 메소드 이름으로 쿼리를 조립(select) / 게시글 아이디를 통해서 그 게시글 아이디에 해당하는 댓글 리스트를 뽑는다. 즉 게시글로 댓글 검색 / Id는 게시글의 아이디가 된다.
+    void deleteByIdAndUserAccount_UserId(Long articleCommentId, String userId);
 
     @Override
     default void customize(QuerydslBindings bindings, QArticleComment root) {
