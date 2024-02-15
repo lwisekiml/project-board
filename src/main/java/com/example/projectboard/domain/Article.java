@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Getter
-@ToString(callSuper = true)
+@ToString(callSuper = true) // 안쪽 까지 스트링을 찍겠다.(AuditingFields 까지 스트링을 찍겠다.)
 @Table(indexes = {
         @Index(columnList = "title"),
         @Index(columnList = "hashtag"),

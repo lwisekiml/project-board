@@ -19,7 +19,11 @@ public record ArticleDto(
         return new ArticleDto(id, userAccountDto, title, content, hashtag, createdAt, createdBy, modifiedAt, modifiedBy);
     }
 
-    public static ArticleDto from(Article entity) {
+    // entity -> dto
+    // dto -> entity
+    // 의 장점은 Article은 dto를 몰라도 된다.
+    // dto만 연관관계를 위해 Article을 알고 있다.(위에 import com.example.projectboard.domain.Article; 부분)
+    public static ArticleDto from(Article entity) { // entity -> dto
         return new ArticleDto(
                 entity.getId(),
                 UserAccountDto.from(entity.getUserAccount()),
@@ -33,7 +37,7 @@ public record ArticleDto(
         );
     }
 
-    public Article toEntity() {
+    public Article toEntity() { // dto -> entity
         return Article.of(
                 userAccountDto.toEntity(),
                 title,
